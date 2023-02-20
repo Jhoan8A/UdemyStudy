@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Enviar parámetros del Request HTTP GET - URL</h1>
+
+    <ul>
+            <!-- <p>En thymeleaf para pasr rutas se usa wel @ en lugar de el $ y para pasar paremtros se usa
+                (aqui van los paremtros ej: texto='tal cosa') recordar que se usan comillas simples ''
+            </p> -->
+           <li><a th:href="@{/params/string(texto='Hola Jhoan')}">/params/string?texto=Hola Jhoan</a></li> 
+           <li><a th:href="@{/params/string(texto='Como vamos Pepe')}">/params/string?texto=Como vamos Pepe</a></li>
+           <li><a th:href="@{/params/mix-params(saludo='Hello Jhoan mix', numero= 25)}">/params/mix-params?saludo=Hello Jhoan mix&numero=30</a></li>
+           <li><a th:href="@{/params/mix-params-request(saludo='Hello Jhoan mix Request', numero= 88)}">/params/mix-params?saludo=Hello Jhoan mix-Request&numero=88</a></li>
+       
+    </ul>
+    
+</body>
+</html>
