@@ -16,7 +16,9 @@ public class ClienteServiceImpl implements IClienteService {
     //inyectamos el cliente DAO
     private IClienteDao clienteDao;
     @Override
-    //nos permite manejar transaccion en el metodo
+    /*nos permite manejar transaccion en el metodo es un select asi que solo lo ponemos de lectura
+     esta anotacion ya viene implicita en el CrudRepository, pero aqui la usamos como para hacerla mas
+     explicita ya que sobreescribe la del CrudRepository*/
     @Transactional(readOnly=true)
     public List<Cliente> findAll() {
       //como el metodo retorna un iterable toca agregar un cast de List<Cliente>
